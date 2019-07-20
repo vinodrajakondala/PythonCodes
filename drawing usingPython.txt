@@ -1,0 +1,112 @@
+import turtle
+import time
+myT=turtle.Turtle()
+
+#angle=90
+#myT.fd(40)
+#myT.lt(angle)
+
+def Square(len):
+  for i in range(4):
+    myT.fd(len)
+    myT.lt(90)      #left turn 90degress
+
+
+Square(60)
+        #prevents the automatic closing of the window after drawing 
+                         # time.sleep(10)after 10 seconds it closes
+
+
+def square(myT,len):
+  for i in range(4):
+    myT.fd(len)
+    myT.lt(90)      #left turn 90degress
+
+g=turtle.Turtle() #creats a turtle instanase called g
+square(g,100)
+
+
+#plygon
+
+def polygon(tur_name,length,side):
+  angle=360/side
+  for i in range(side):
+     tur_name.fd(length)
+     tur_name.lt(angle)
+
+v=turtle.Turtle()
+polygon(v,70,3)      #traingle
+polygon(v,70,5)      #pentagone
+polygon(v,70,6)      #hexagone
+polygon(v,70,7)      #septagone
+polygon(v,70,8)      #octagone
+polygon(v,5,100)     #appear as circle
+
+
+#but we draw more precisely a cirlce with radius given
+def circle(tur_name,r):
+    circum=2*3.141*r
+    n=int(circum/3)+3
+    length=circum/n
+    side=n
+    polygon(tur_name,length,side)
+
+circle(v,10)
+circle(v,50)
+
+
+#To draw a flower using 
+def arc(tur_name,r, angle):
+   arc_length=2*3.141*r*(angle/360)
+   n=int(arc_length/3)+1
+   step_length=arc_length/n
+   step_angle=angle/n
+   tur_name.color('black','yellow')
+   tur_name.begin_fill()
+
+   for i in range(n):
+      tur_name.fd(step_length)
+      tur_name.lt(step_angle)
+
+   tur_name.end_fill()
+
+arc(g,50,45)
+
+
+
+def petal(tur_name,r,angle):
+   for i in range(2):
+       arc(tur_name,r,angle)
+       tur_name.lt(180-angle) 
+
+petal(g,300,45)
+
+def flower(tur_name,n,r,angle):
+   for i in range(n):
+      petal(tur_name,r,angle)
+      tur_name.lt(360.0/n)
+
+flower(g,10,300,45)
+
+turtle.mainloop()
+
+
+import turtle
+window = turtle.Screen() # Set up the window and its attributes
+window.bgcolor("lightgreen")
+window.title("Tess & Alex")
+
+t = turtle.Turtle() # Create tess and set some attributes
+t.color("hotpink")
+t.pensize(5)
+
+
+
+
+
+
+
+
+
+
+  

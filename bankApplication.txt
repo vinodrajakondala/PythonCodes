@@ -1,0 +1,35 @@
+import sys
+class Customer:
+    Bank_name="SBI"
+    def __init__(self,name,balance=0.0):
+        self.name=name
+        self.balance=balance
+    def deposit(self,amt):
+        self.balance+=amt
+        print("Balance after deposit = " ,self.balance)
+    def withdraw(self,amt):
+        if amt>self.balance:
+            print("Cant perform the operation")
+            sys.exit()
+        self.balance-=amt
+        print("Balance after withdrawl = ",self.balance)
+
+print("Welcome to %s",Customer.Bank_name)
+name=input(" Enter customer name : ")
+c=Customer(name)
+while True:
+    print("d-Deposit\nw-Withdraw\neExit")
+    option=input("choose your option:").lower()
+    
+    if option=='d':
+        amt=float(input("Enter Deposit amount = "))
+        c.deposit(amt)
+    elif option=='w': 
+        amt=float(input("Enter withdraw amount = "))
+        c.withdraw(amt)
+    elif option=='e':
+        print("Thanks for banking")
+        sys.exit()
+    else:
+        print("INVALID OPTION-PLEASE CHOOSE VALID OPTION")
+        

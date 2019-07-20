@@ -1,4 +1,4 @@
-#refrence book ThinkPtyhon3
+#refrence book ThinkPython2 or 3
 import turtle
 import time
 myT=turtle.Turtle()
